@@ -1,0 +1,123 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .control {
+        display: flex;
+        align-items: center;
+
+        .back,
+        .next {
+            padding: 0 10px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .next {
+            color: var(--background-border);
+        }
+    }
+
+    .search {
+        position: relative;
+        flex: 1;
+        display: flex;
+        height: 38px;
+        background-color: var(--white-color);
+        border-radius: 50px;
+        margin: 0 50px 0 10px;
+        padding-right: 16px;
+
+        .search-btn {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 52px;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            cursor: pointer;
+
+            svg {
+                fill: rgba(22, 24, 35, 0.34);
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(22, 24, 35, 0.03);
+            }
+
+            &:active {
+                background-color: rgba(22, 24, 35, 0.06);
+            }
+        }
+
+        input {
+            border: none;
+            outline: none;
+            height: 100%;
+            flex: 1;
+            padding: 0 30px 0 4px;
+            font-size: 1.6rem;
+            caret-color: var(--primary);
+            color: #8a8a8f;
+            background-color: transparent;
+        }
+
+        input:not(:placeholder-shown) ~ .search-btn svg {
+            fill: rgba(22, 24, 35, 0.75);
+        }
+
+        input:focus ~ .search-border {
+            display: block;
+        }
+
+        .search-border {
+            display: none;
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            bottom: -2px;
+            left: -2px;
+            border: 1.5px solid rgba(22, 24, 35, 0.2);
+            border-radius: 50px;
+        }
+    }
+
+    .info {
+        display: flex;
+        align-items: center;
+
+        .name {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-right: 12px;
+            color: #8a8a8f;
+            cursor: default;
+        }
+
+        .image {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            svg {
+                font-size: 1.4rem;
+                color: #8a8a8f;
+            }
+        }
+
+        .image img {
+            display: block;
+            width: 32px;
+            height: 32px;
+            object-fit: cover;
+            border-radius: 100%;
+            margin-right: 12px;
+        }
+    }
+}

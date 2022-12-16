@@ -1,0 +1,24 @@
+.playlist {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 -12px;
+}
+
+.playlist-col {
+    width: 20%;
+    padding: 0 12px;
+}
+
+.playlist-item {
+    margin-top: 10px;
+    margin-bottom: 14px;
+
+    .image img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+}

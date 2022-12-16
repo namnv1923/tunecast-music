@@ -1,0 +1,31 @@
+.wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9;
+        width: 248px;
+        background-color: #f2f1f5;
+        border-right: 1px solid var(--border-color);
+    }
+
+    & .content {
+        flex: 1;
+        margin-left: 248px;
+        background-color: #f9f9f9;
+    }
+}

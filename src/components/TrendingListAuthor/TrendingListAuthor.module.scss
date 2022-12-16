@@ -1,0 +1,24 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+
+    & .item {
+        margin-right: 20px;
+
+        .image {
+            display: block;
+            width: 68px;
+            height: 68px;
+            border-radius: 100%;
+            object-fit: cover;
+        }
+
+        .singer {
+            display: inline-block;
+            font-size: 1.4rem;
+            color: var(--text-color-2);
+            margin-top: 8px;
+            line-height: 1.6rem;
+        }
+    }
+}
