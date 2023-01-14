@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
-import styles from './HeaderHome.module.scss';
+import styles from './Header.module.scss';
 import { SearchIcon } from '~/components/Icons';
 import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
-function HeaderHome() {
+function Header() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('control')}>
@@ -32,4 +32,4 @@ function HeaderHome() {
     );
 }
 
-export default HeaderHome;
+export default Header;

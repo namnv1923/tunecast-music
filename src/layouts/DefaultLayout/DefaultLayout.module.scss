@@ -24,8 +24,29 @@
     }
 
     & .content {
+        position: relative;
         flex: 1;
+        width: 100%;
+        overflow-x: hidden;
         margin-left: 248px;
+        margin-right: 330px;
         background-color: #f9f9f9;
+        padding: 0 40px;
+        overflow-y: overlay;
+
+        & .body {
+            margin-top: var(--header-search-info-height);
+        }
+    }
+
+    & .queue {
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 9;
+        width: 330px;
+        background-color: #f9f9f9;
+        border-left: 1px solid var(--border-color);
     }
 }

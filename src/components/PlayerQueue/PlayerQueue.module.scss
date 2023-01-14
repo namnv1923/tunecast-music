@@ -1,0 +1,115 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 4px;
+    position: relative;
+
+    &:hover,
+    &.active {
+        background-color: var(--alpha-bg);
+        transition: all 0.2s ease 0s;
+    }
+
+    &.active .control,
+    &:hover .control,
+    &.active .content .img .overlay,
+    &:hover .content .img .overlay {
+        visibility: visible;
+    }
+
+    & .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .img {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            margin-right: 10px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                border-radius: 4px;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+                z-index: 1;
+                cursor: pointer;
+                visibility: hidden;
+
+                & span {
+                    padding: 4px;
+                    color: var(--white-color);
+                }
+            }
+        }
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding-right: 58px;
+
+    & span {
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        height: auto;
+        overflow: hidden;
+    }
+
+    & .music {
+        font-size: 1.4rem;
+        color: var(--player-text);
+        cursor: pointer;
+    }
+
+    & .singer {
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        color: var(--text-color);
+    }
+
+    & .time {
+        font-size: 1.2rem;
+        color: var(--text-color);
+    }
+}
+
+.control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+    visibility: hidden;
+
+    & span {
+        color: var(--text-color);
+        cursor: pointer;
+    }
+
+    & .favourite {
+        margin-right: 18px;
+    }
+}

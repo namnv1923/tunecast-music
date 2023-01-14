@@ -1,0 +1,46 @@
+.wrapper {
+    background: url('https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.20/static/media/bg-chart.fd766403.jpg') top /
+        cover no-repeat;
+    border-radius: 6px;
+
+    .container {
+        background-image: var(--linear-gradient-bg);
+        padding: 20px;
+        border-radius: 6px;
+        opacity: 0.96;
+        z-index: -2;
+
+        & .head a {
+            display: inline-block;
+            font-size: 2.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--white-color);
+            margin-right: 8px;
+            margin-bottom: 10px;
+
+            &:hover {
+                color: var(--link-text-hover);
+            }
+        }
+
+        & .head {
+            .icon {
+                font-size: 2.8rem;
+                color: var(--white-color);
+
+                &:hover {
+                    opacity: 0.8;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.zing-chart {
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}

@@ -24,7 +24,6 @@ export const publicRoutes: Array<publicRoutesType> = [
     {
         path: routes.categories,
         component: Categories,
-        layout: NoSongPlaying,
     },
     {
         path: routes.favourites,
