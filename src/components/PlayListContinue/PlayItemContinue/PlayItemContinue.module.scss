@@ -12,29 +12,22 @@
         transition: all 0.2s ease 0s;
     }
 
-    &.active .more,
-    &:hover .more,
+    &.active .control,
+    &:hover .control,
     &.active .content .img .overlay,
     &:hover .content .img .overlay {
         visibility: visible;
-    }
-
-    &.active .info,
-    &:hover .info {
-        margin-right: 38px;
     }
 
     & .content {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: 10px;
-        flex: 1;
 
         .img {
             position: relative;
-            width: 60px;
-            height: 60px;
+            width: 40px;
+            height: 40px;
             border-radius: 4px;
             margin-right: 10px;
 
@@ -75,17 +68,9 @@
     flex-direction: column;
     justify-content: center;
     flex: 1;
+    padding-right: 58px;
 
-    &.is-VIP .name .tag {
-        display: inline-block;
-    }
-
-    &.is-VIP .name,
-    &.is-VIP .singer {
-        opacity: 0.5;
-    }
-
-    & > span {
+    & span {
         display: -webkit-box;
         text-overflow: ellipsis;
         -webkit-box-orient: vertical;
@@ -94,59 +79,31 @@
         overflow: hidden;
     }
 
-    & .name {
-        display: flex;
-        align-items: center;
+    & .music {
         font-size: 1.4rem;
         font-weight: 500;
-        color: var(--player-text);
-
-        .name-song {
-            display: -webkit-box;
-            text-overflow: ellipsis;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1;
-            height: auto;
-            overflow: hidden;
-        }
-
-        .tag {
-            display: none;
-            margin-left: 8px;
-        }
+        color: var(--text-primary);
     }
 
     & .singer {
-        font-size: 1.3rem;
-        color: var(--text-color);
-        line-height: 1.4;
-    }
-
-    & .time {
         font-size: 1.2rem;
         color: var(--text-color);
     }
 }
 
-.wrapper {
-    .more {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        right: 8px;
-        width: 38px;
-        height: 38px;
-        visibility: hidden;
-        margin-left: 10px;
-        border-radius: 100%;
-        color: var(--text-primary);
-        cursor: pointer;
+.control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+    visibility: hidden;
 
-        &:hover {
-            background-color: var(--alpha-bg);
-        }
+    & span {
+        color: var(--text-color);
+        cursor: pointer;
+    }
+
+    & .favourite {
+        margin-right: 18px;
     }
 }

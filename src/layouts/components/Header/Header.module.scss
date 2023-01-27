@@ -5,8 +5,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 40px;
+    padding: 15px 40px;
     // box-shadow: var(--box-shadow-header);
+    background-color: var(--layout-bg);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 3px 5px var(--sticky-header-box-shadow);
     z-index: 9;
 
     .control {
@@ -26,7 +29,7 @@
         flex: 1;
         display: flex;
         height: 38px;
-        background-color: var(--white-color);
+        background-color: var(--alpha-bg);
         border-radius: 50px;
         margin: 0 50px 0 10px;
         padding-right: 16px;
@@ -45,7 +48,7 @@
             cursor: pointer;
 
             svg {
-                fill: rgba(22, 24, 35, 0.34);
+                fill: var(--text-placeholder);
             }
 
             &:hover {
@@ -65,8 +68,8 @@
             flex: 1;
             padding: 0 30px 0 4px;
             font-size: 1.6rem;
-            caret-color: var(--primary);
-            color: #8a8a8f;
+            caret-color: var(--text-primary);
+            color: var(--search-text);
             background-color: transparent;
         }
 
@@ -81,10 +84,10 @@
         .search-border {
             display: none;
             position: absolute;
-            top: -2px;
-            right: -2px;
-            bottom: -2px;
-            left: -2px;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
             border: 1.5px solid rgba(22, 24, 35, 0.2);
             border-radius: 50px;
         }

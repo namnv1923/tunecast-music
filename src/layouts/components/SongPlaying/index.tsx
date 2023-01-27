@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react';
+import ReactPlayer from 'react-player/lazy';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faShuffle,
@@ -13,19 +15,41 @@ import {
 import classNames from 'classnames/bind';
 import styles from './SongPlaying.module.scss';
 import images from '~/assets/images';
+import { useAppDispatch, useAppSelector } from '~/app/hooks';
+import { setCurrentTime } from '~/redux/slices/songPlaySlice';
+import { setIsPlaying } from '~/redux/slices/settingsSlice';
+import formatTime from '~/utils/formatTime';
 
 const cx = classNames.bind(styles);
 
 function SongPlaying() {
+    const dispatch = useAppDispatch();
+    const audioRef = useRef<ReactPlayer>(null);
+    const progressBarRef = useRef<any>(null);
+
+    const { isPlaying } = useAppSelector((state: any) => state.settings);
+    const { currentTime, currentSongPlay } = useAppSelector((state: any) => state.songPlay);
+
+    const handlePlay = () => {};
+
+    const handleRunProgressBar = () => {
+        if (progressBarRef.current && audioRef.current) {
+            progressBarRef.current.style.width = `${
+                (Math.floor(audioRef.current?.getCurrentTime()) / Math.floor(audioRef.current?.getDuration())) * 100
+            }%`;
+            dispatch(setCurrentTime(Math.floor(audioRef.current?.getCurrentTime())));
+        }
+    };
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('left')}>
                 <div className={cx('image')}>
-                    <img src={images.defaultImg} alt="" />
+                    <img src={currentSongPlay.thumbnail || images.defaultImg} alt="" />
                 </div>
                 <div className={cx('label')}>
-                    <h4 className={cx('name')}>Episode 1: How to feel yourself</h4>
-                    <span className={cx('singer')}>Love kit</span>
+                    <h4 className={cx('name')}>{currentSongPlay.title}</h4>
+                    <span className={cx('singer')}>{currentSongPlay.artistsNames}</span>
                 </div>
             </div>
             <div className={cx('control')}>
@@ -36,8 +60,11 @@ function SongPlaying() {
                     <span className={cx('back')}>
                         <FontAwesomeIcon icon={faBackwardStep} />
                     </span>
-                    <span className={cx('play')}>
-                        <FontAwesomeIcon icon={faPlay} />
+                    <span
+                        className={cx('play')}
+                        onClick={() => (isPlaying ? dispatch(setIsPlaying(false)) : dispatch(setIsPlaying(true)))}
+                    >
+                        <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
                     </span>
                     <span className={cx('next')}>
                         <FontAwesomeIcon icon={faForwardStep} />
@@ -47,14 +74,21 @@ function SongPlaying() {
                     </span>
                 </div>
                 <div className={cx('timer')}>
-                    <span className={cx('current-timer')}>0:00</span>
+                    <span className={cx('current-timer')}>{formatTime(currentTime)}</span>
                     <div className={cx('custom-progress')}>
-                        <div className={cx('progress-bar')} style={{ width: '10px' }}></div>
-                        <div style={{ width: 0, height: 0 }}>
-                            <audio src="" id="audio" preload="auto" style={{ width: '100%', height: '100%' }}></audio>
-                        </div>
+                        <div ref={progressBarRef} className={cx('progress-bar')} style={{ width: '0px' }}></div>
+                        <ReactPlayer
+                            ref={audioRef}
+                            width={0}
+                            height={0}
+                            config={{ file: { forceAudio: true } }}
+                            playing={isPlaying}
+                            onPlay={handlePlay}
+                            onProgress={handleRunProgressBar}
+                            url={`http://api.mp3.zing.vn/api/streaming/audio/${currentSongPlay.encodeId}/320`}
+                        />
                     </div>
-                    <span className={cx('total-timer')}>5:32</span>
+                    <span className={cx('total-timer')}>{currentSongPlay && formatTime(currentSongPlay.duration)}</span>
                 </div>
             </div>
             <div className={cx('right')}>

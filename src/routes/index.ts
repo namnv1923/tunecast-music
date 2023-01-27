@@ -7,7 +7,7 @@ import NoLayout from '~/layouts/NoLayout';
 import routes from '~/config/routes';
 import Home from '~/pages/Home';
 import Login from '~/pages/Login';
-import Categories from '~/pages/Categories';
+import Recently from '~/pages/Recently';
 import NotExist from '~/pages/NotExist';
 
 type publicRoutesType = {
@@ -22,8 +22,8 @@ export const publicRoutes: Array<publicRoutesType> = [
         component: Home,
     },
     {
-        path: routes.categories,
-        component: Categories,
+        path: routes.recently,
+        component: Recently,
     },
     {
         path: routes.favourites,

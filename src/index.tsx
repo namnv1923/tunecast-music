@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
@@ -19,15 +18,13 @@ const queryClient = new QueryClient({
 });
 
 root.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <QueryClientProvider client={queryClient}>
-                <GlobalStyles>
-                    <App />
-                </GlobalStyles>
-            </QueryClientProvider>
-        </Provider>
-    </React.StrictMode>,
+    <Provider store={store}>
+        <QueryClientProvider client={queryClient}>
+            <GlobalStyles>
+                <App />
+            </GlobalStyles>
+        </QueryClientProvider>
+    </Provider>,
 );
 
 // If you want to start measuring performance in your app, pass a function

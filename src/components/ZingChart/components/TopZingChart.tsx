@@ -2,26 +2,22 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './TopZingChart.module.scss';
 import TopZingChartItem from './TopZingChartItem';
+import { SongQueueItemType } from '~/components/PlayerQueue';
 
 const cx = classNames.bind(styles);
 
-export interface TopChartType {
-    encodeId: string;
-    title: string;
-    artistsNames: string;
-    artists: {
-        id: string;
-        name: string;
-        link: string;
-        alias: string;
-        thumbnail: string;
-        thumbnailM: string;
-        playlistId: string;
-    }[];
-    thumbnailM: string;
+export type ArtistItemType = {
+    id: string;
+    name: string;
+    link: string;
+    alias: string;
     thumbnail: string;
-    score: number;
-}
+    thumbnailM: string;
+    playlistId: string;
+    spotlight: boolean;
+};
+
+export type TopChartType = SongQueueItemType & { score: number };
 
 type TopZingChartsType = {
     topZingCharts: TopChartType[];
@@ -36,9 +32,9 @@ function TopZingChart({ topZingCharts }: TopZingChartsType) {
 
     return (
         <div className={cx('wrapper')}>
-            <TopZingChartItem data={ChartTop1} allScore={allScore} />
-            <TopZingChartItem data={ChartTop2} allScore={allScore} />
-            <TopZingChartItem data={ChartTop3} allScore={allScore} />
+            <TopZingChartItem index={1} data={ChartTop1} allScore={allScore} />
+            <TopZingChartItem index={2} data={ChartTop2} allScore={allScore} />
+            <TopZingChartItem index={3} data={ChartTop3} allScore={allScore} />
             <div className={cx('button')}>
                 <Link to="/">Xem thêm</Link>
             </div>

@@ -18,7 +18,7 @@ export type WeekChartType = {
 
 function WeekChart() {
     const { data, status } = getWeekChart();
-    console.log(data);
+
     return (
         <div className="grid">
             <div className="row">

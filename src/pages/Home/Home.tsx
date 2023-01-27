@@ -1,21 +1,21 @@
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
-import { getGallery } from '~/apis/homeApi';
 import Gallery from '~/components/Gallery';
 import NewRelease from './components/NewRelease';
 import AlbumList from '~/components/AlbumList';
 import ZingChart from '~/components/ZingChart';
 import WeekChart from './components/WeekChart';
 import ArtistSpotlight from './components/ArtistSpotlight';
+import Top100 from '~/components/Top100';
 
 const cx = classNames.bind(styles);
 
 function Home() {
-    const { data, status } = getGallery();
-
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('gallery')}>{status === 'success' && <Gallery galleryList={data} />}</div>
+            <div className={cx('gallery')}>
+                <Gallery />
+            </div>
             <div className={cx('new-release')}>
                 <NewRelease />
             </div>
@@ -30,6 +30,9 @@ function Home() {
             </div>
             <div className={cx('artist-spotlight')}>
                 <ArtistSpotlight />
+            </div>
+            <div className={cx('top-100')}>
+                <Top100 title="Top 100" />
             </div>
         </div>
     );

@@ -26,12 +26,11 @@
     }
 
     &:hover {
-        background-color: var(--white-color);
         color: var(--orange-color);
     }
 
     &.active {
-        background-color: var(--white-color);
+        background-color: var(--alpha-bg);
         color: var(--orange-color);
     }
 }

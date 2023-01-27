@@ -1,0 +1,8 @@
+.wrapper {
+    max-height: calc(100vh - 504px - var(--playing-song-height));
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

@@ -1,82 +1,44 @@
 .wrapper {
     padding: 18px 18px;
+    cursor: default;
 
-    .label {
-        margin-bottom: 20px;
-    }
-
-    .playlist {
+    .header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 20px;
-    }
 
-    .left {
-        display: flex;
-        align-items: center;
-
-        .icon {
+        .options {
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            margin-right: 16px;
-            border-radius: 8px;
-            background-color: #dde0e4;
-        }
 
-        .info {
-            display: flex;
-            flex-direction: column;
-
-            .title {
-                font-size: 1.4rem;
-                font-weight: 600;
+            .timer,
+            .more {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 32px;
+                height: 32px;
+                font-size: 1.6rem;
+                color: var(--text-primary);
+                border-radius: 100%;
+                background-color: var(--alpha-bg);
+                cursor: pointer;
             }
 
-            .number {
-                font-size: 1.2rem;
-                color: var(--text-color);
+            .more {
+                margin-left: 8px;
             }
         }
     }
 
-    .timer {
-        font-size: 1.4rem;
-        color: #7c8db5;
-    }
+    .playlist-continue {
+        margin-top: 15px;
 
-    .artist {
-        margin-top: 20px;
-
-        .label {
-            margin-bottom: 10px;
-        }
-
-        .artist-list {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .artist-item img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            display: block;
-            border-radius: 10px;
-        }
-
-        .artist-item .desc {
-            display: block;
-            margin-top: 6px;
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--text-color);
-            text-align: center;
+        .title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 6px;
         }
     }
 }

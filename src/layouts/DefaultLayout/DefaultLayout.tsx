@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './DefaultLayout.module.scss';
 import Sidebar from '~/layouts/components/Sidebar';
@@ -12,6 +13,8 @@ type DefaultLayoutType = {
 };
 
 function DefaultLayout({ children }: DefaultLayoutType) {
+    const location = useLocation();
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>

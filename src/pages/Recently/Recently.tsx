@@ -1,11 +1,11 @@
 import classNames from 'classnames/bind';
-import styles from './Categories.module.scss';
+import styles from './Recently.module.scss';
 import AlbumList from '~/components/AlbumList';
 import SongList from '~/components/SongList';
 
 const cx = classNames.bind(styles);
 
-function Categories() {
+function Recently() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('content')}>
@@ -16,11 +16,9 @@ function Categories() {
                     <li>Radio</li>
                 </ul>
                 <SongList label="Recently Played" />
-                <AlbumList label="Global Top 50" />
-                <AlbumList label="Songs You Might Like" />
             </div>
         </div>
     );
 }
 
-export default Categories;
+export default Recently;

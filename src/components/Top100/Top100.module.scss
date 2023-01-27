@@ -1,0 +1,30 @@
+.wrapper {
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+            font-size: 20px;
+            color: var(--black-color);
+        }
+
+        .see-all {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-secondary);
+
+            &:hover {
+                color: var(--link-text-hover);
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-left: 8px;
+            }
+        }
+    }
+}

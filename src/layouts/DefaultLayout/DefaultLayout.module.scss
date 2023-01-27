@@ -4,6 +4,7 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    background-color: var(--layout-bg);
 
     .container {
         width: 100%;
@@ -19,7 +20,7 @@
         left: 0;
         z-index: 9;
         width: 248px;
-        background-color: #f2f1f5;
+        background-color: var(--sidebar-bg);
         border-right: 1px solid var(--border-color);
     }
 
@@ -30,12 +31,12 @@
         overflow-x: hidden;
         margin-left: 248px;
         margin-right: 330px;
-        background-color: #f9f9f9;
         padding: 0 40px;
         overflow-y: overlay;
 
         & .body {
             margin-top: var(--header-search-info-height);
+            padding-top: 20px;
         }
     }
 
@@ -46,7 +47,6 @@
         bottom: 0;
         z-index: 9;
         width: 330px;
-        background-color: #f9f9f9;
         border-left: 1px solid var(--border-color);
     }
 }

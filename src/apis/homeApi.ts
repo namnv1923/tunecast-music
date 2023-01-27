@@ -49,3 +49,12 @@ export const getWeekChart = () => {
         return data.data.items.find((item: any) => item.sectionType === 'weekChart').items;
     });
 };
+
+export const getTop100 = (sectionId: string) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    return useQuery(['top-100'], async () => {
+        const data = await apiInstance.get(HomePath.HomePage);
+        return data.data.items.find((item: any) => item.sectionType === 'playlist' && item.sectionId === sectionId)
+            .items;
+    });
+};

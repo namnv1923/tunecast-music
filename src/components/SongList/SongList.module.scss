@@ -5,6 +5,23 @@
     border-radius: 8px;
     border: 1px solid var(--border-color-2);
     cursor: default;
+    max-height: 464px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        border-radius: 0;
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
 
     .header {
         display: flex;
@@ -27,8 +44,9 @@
     border-radius: 8px;
     margin-bottom: 8px;
 
+    &.active,
     &:hover {
-        background-color: rgba($color: #fff, $alpha: 0.8);
+        background-color: var(--alpha-bg);
     }
 
     .item-wrapper {
@@ -40,6 +58,7 @@
         font-weight: 600;
         color: #7c8db5;
         min-width: 42px;
+        margin-left: 8px;
     }
 
     .item-info {
@@ -52,7 +71,7 @@
             height: 42px;
             margin-right: 16px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 6px;
         }
 
         .item-body {

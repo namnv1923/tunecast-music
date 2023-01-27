@@ -11,6 +11,7 @@
     --text-color-2: #8a8f96;
     --text-color-3: hsla(0, 0%, 100%, 0.5);
     --orange-color: #ee732f;
+    --search-text: #282828;
     --background-border: #dedede;
     --border-color: #e6effb;
     --border-color-2: #ccc;
@@ -18,6 +19,10 @@
     --link-text-hover: #9c32ca;
     --linear-gradient-bg: linear-gradient(180deg, #740091, #2d1a4c);
     --alpha-bg: rgba(0, 0, 0, 0.05);
+    --sidebar-bg: rgba(0, 0, 0, 0.05);
+    --layout-bg: #fff;
+    --text-placeholder: #757575;
+    --sticky-header-box-shadow: rgba(0, 0, 0, 0.08);
 
     // Box shadow color
     --sticky-header-box-shadow: rgba(0, 0, 0, 0.08);
@@ -27,7 +32,7 @@
 
     // Width height
     --playing-song-height: 88px;
-    --header-search-info-height: 74px;
+    --header-search-info-height: 68px;
 
     // Font family
     --font-family: 'Poppins', sans-serif;

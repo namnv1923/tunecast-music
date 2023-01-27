@@ -1,0 +1,92 @@
+.skeleton.image {
+    width: 376px;
+    height: 224px;
+    border-radius: 8px;
+
+    background-color: #e2e5e7;
+    background-image: linear-gradient(90deg, rgba(#fff, 0), rgba(#fff, 0.5), rgba(#fff, 0));
+    background-size: 40px 100%;
+    background-repeat: no-repeat;
+    background-position: left -40px top 0;
+    animation: shine 1s ease infinite;
+}
+
+.skeleton.player-queue {
+    width: 380px;
+    height: 76px;
+    border-radius: 4px;
+
+    background-color: #fff;
+    background-image: linear-gradient(90deg, rgba(#fff, 0), rgba(#fff, 0.5), rgba(#fff, 0));
+    background-size: 40px 100%;
+    background-repeat: no-repeat;
+    background-position: left -40px top 0;
+    animation: shine 1s ease infinite;
+
+    & .wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        border-radius: 4px;
+        position: relative;
+
+        & .content {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-right: 10px;
+            flex: 1;
+        }
+    }
+
+    & .wrapper .content .img {
+        width: 60px;
+        height: 60px;
+        border-radius: 4px;
+        margin-right: 8px;
+        background-color: #e2e5e7;
+        background-image: linear-gradient(90deg, rgba(#fff, 0), rgba(#fff, 0.5), rgba(#fff, 0));
+        background-size: 40px 100%;
+        background-repeat: no-repeat;
+        background-position: left -40px top 0;
+        animation: shine 1s ease infinite;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .name {
+            height: 23px;
+            width: 300px;
+            background-color: #e2e5e7;
+            background-image: linear-gradient(90deg, rgba(#fff, 0), rgba(#fff, 0.5), rgba(#fff, 0));
+            background-size: 40px 100%;
+            background-repeat: no-repeat;
+            background-position: left -40px top 0;
+            animation: shine 1s ease infinite;
+        }
+
+        .singer {
+            display: inline-block;
+            width: 76px;
+            height: 23px;
+            margin-top: 8px;
+            background-color: #e2e5e7;
+            background-image: linear-gradient(90deg, rgba(#fff, 0), rgba(#fff, 0.5), rgba(#fff, 0));
+            background-size: 40px 100%;
+            background-repeat: no-repeat;
+            background-position: left -40px top 0;
+            animation: shine 1s ease infinite;
+        }
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position: right -40px top 0;
+    }
+}

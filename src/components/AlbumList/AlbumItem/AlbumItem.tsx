@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
-import styles from '../AlbumList.module.scss';
+import styles from './AlbumItem.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -25,11 +25,24 @@ function AlbumItem({ albumItem }: any) {
                 </h4>
                 <p className={cx('author')}>
                     {albumItem.artists &&
-                        albumItem.artists.map((artist: any) => (
-                            <span key={artist.id}>
-                                <Link to={artist.link}>{artist.name}, </Link>
-                            </span>
-                        ))}
+                        albumItem.artists.map((artist: any, index: number) => {
+                            let artistName = artist.name || artist.alias;
+                            let comma: string | null = ', ';
+                            if (index >= 3) {
+                                comma = null;
+                                artistName = null;
+                            }
+                            if (index === 2) {
+                                comma = '...';
+                            }
+
+                            return (
+                                <span key={artist.id}>
+                                    <Link to={`nghe-si/${artist.alias}`}>{artistName}</Link>
+                                    {comma}
+                                </span>
+                            );
+                        })}
                 </p>
             </div>
         </div>

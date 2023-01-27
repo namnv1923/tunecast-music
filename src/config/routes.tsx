@@ -1,6 +1,6 @@
 const routes = {
     home: '/',
-    categories: '/categories',
+    recently: '/recently',
     favourites: '/favourites',
     create: '/create',
     album: '/album',

@@ -1,23 +1,25 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from '../../Home.module.scss';
-import PlayerQueue from '~/components/PlayerQueue';
 import { getNewRelease } from '~/apis/homeApi';
+import PlayerQueue from '~/components/PlayerQueue';
+import { SongQueueItemType } from '~/components/PlayerQueue';
+import LoadingSkeleton from '~/components/LoadingSkeleton';
 
 const cx = classNames.bind(styles);
 
 function NewRelease() {
     const { data, status } = getNewRelease();
-    const vPopList = useRef([]);
-    const otherList = useRef([]);
+    const [vPopList, setVPopList] = useState([]);
+    const [otherList, setOtherList] = useState([]);
     const [isVietNam, setIsVietNam] = useState(true);
 
     useEffect(() => {
         if (status === 'success') {
-            vPopList.current = data.vPop.splice(0, 12);
-            otherList.current = data.others.splice(0, 12);
+            setVPopList(data.vPop);
+            setOtherList(data.others);
         }
-    }, [status, data]);
+    }, [data, status]);
 
     return (
         <div className={cx('new-release')}>
@@ -33,19 +35,39 @@ function NewRelease() {
             <div className={cx('playlist')}>
                 <div className="grid">
                     <div className="row">
-                        {isVietNam
-                            ? vPopList.current &&
-                              vPopList.current.map((item: any, index: number) => (
-                                  <div key={index} className="col l-4">
-                                      <PlayerQueue item={item} />
-                                  </div>
-                              ))
-                            : otherList.current &&
-                              otherList.current.map((item: any, index: number) => (
-                                  <div key={index} className="col l-4">
-                                      <PlayerQueue item={item} />
-                                  </div>
-                              ))}
+                        {status === 'success'
+                            ? isVietNam
+                                ? vPopList &&
+                                  vPopList.map((item: SongQueueItemType, index: number) => {
+                                      if (index > 11) {
+                                          return;
+                                      } else {
+                                          return (
+                                              <div key={index} className="col l-4">
+                                                  <PlayerQueue item={item} />
+                                              </div>
+                                          );
+                                      }
+                                  })
+                                : otherList &&
+                                  otherList.map((item: SongQueueItemType, index: number) => {
+                                      if (index > 11) {
+                                          return;
+                                      } else {
+                                          return (
+                                              <div key={index} className="col l-4">
+                                                  <PlayerQueue item={item} />
+                                              </div>
+                                          );
+                                      }
+                                  })
+                            : Array(12)
+                                  .fill(0)
+                                  .map((item: any, index: number) => (
+                                      <div key={index} className="col l-4">
+                                          <LoadingSkeleton option="player-queue" />
+                                      </div>
+                                  ))}
                     </div>
                 </div>
             </div>
