@@ -1,9 +1,10 @@
 const routes = {
     home: '/',
-    recently: '/recently',
+    browse: '/browse',
+    zingchart: '/zing-chart',
     favourites: '/favourites',
-    create: '/create',
-    album: '/album',
+    tracks: '/tracks',
+    playlists: '/playlists',
     settings: '/settings',
     logout: '/logout',
     login: '/login',

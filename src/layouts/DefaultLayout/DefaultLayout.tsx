@@ -27,9 +27,9 @@ function DefaultLayout({ children }: DefaultLayoutType) {
                     </div>
                     <div className={cx('body')}>{children}</div>
                 </div>
-                <div className={cx('queue')}>
+                {/* <div className={cx('queue')}>
                     <Queue />
-                </div>
+                </div> */}
             </div>
             <SongPlaying />
         </div>

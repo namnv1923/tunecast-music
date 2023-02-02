@@ -19,7 +19,7 @@
         bottom: 0;
         left: 0;
         z-index: 9;
-        width: 248px;
+        width: var(--sidebar-width);
         background-color: var(--sidebar-bg);
         border-right: 1px solid var(--border-color);
     }
@@ -29,9 +29,8 @@
         flex: 1;
         width: 100%;
         overflow-x: hidden;
-        margin-left: 248px;
-        margin-right: 330px;
-        padding: 0 40px;
+        margin-left: var(--sidebar-width);
+        padding: 0 50px;
         overflow-y: overlay;
 
         & .body {

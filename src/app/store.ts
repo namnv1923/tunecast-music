@@ -1,11 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import songPlayReducer from '~/redux/slices/songPlaySlice';
-import settingsSlice from '~/redux/slices/settingsSlice';
+import settingsSongSlice from '~/redux/slices/settingsSongSlice';
+import openQueueSlice from '~/redux/slices/openQueueSlice';
 
 export const store = configureStore({
     reducer: {
         songPlay: songPlayReducer,
-        settings: settingsSlice,
+        settings: settingsSongSlice,
+        openQueue: openQueueSlice,
     },
 });
 

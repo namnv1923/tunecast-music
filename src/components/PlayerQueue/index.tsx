@@ -7,7 +7,7 @@ import classNames from 'classnames/bind';
 import styles from './PlayerQueue.module.scss';
 import { ArtistItemType } from '~/components/ZingChart/components/TopZingChart';
 import { useAppDispatch, useAppSelector } from '~/app/hooks';
-import { setIsPlaying } from '~/redux/slices/settingsSlice';
+import { setIsPlaying } from '~/redux/slices/settingsSongSlice';
 import { setCurrentSongPlay, pushRecentSongPlayList } from '~/redux/slices/songPlaySlice';
 import formatReleaseDate from '~/utils/formatReleaseDate';
 import { TagVIP } from '~/components/Icons';
@@ -15,6 +15,9 @@ import { TagVIP } from '~/components/Icons';
 const cx = classNames.bind(styles);
 
 export type SongQueueItemType = {
+    album: {
+        title: string;
+    };
     alias: string;
     artists: ArtistItemType[];
     artistsNames: string;
@@ -28,6 +31,7 @@ export type SongQueueItemType = {
     thumbnailM: string;
     title: string;
     zingChoice: boolean;
+    rakingStatus: number;
 };
 
 function PlayerQueue({ item }: { item: SongQueueItemType }) {

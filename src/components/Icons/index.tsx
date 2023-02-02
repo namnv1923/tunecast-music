@@ -4,6 +4,22 @@ type IconsType = {
     className?: string;
 };
 
+export const LogoIcon = ({ width = '2.4rem', height = '2.4rem', className }: IconsType) => (
+    <svg
+        className={className}
+        width={width}
+        height={height}
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+    >
+        <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="6"></circle>
+        <g className="logo-loading-spin">
+            <circle cx="16" cy="16" r="1" fill="#fff"></circle>
+        </g>
+    </svg>
+);
+
 export const SearchIcon = ({ width = '2.4rem', height = '2.4rem', className }: IconsType) => (
     <svg
         className={className}
@@ -89,6 +105,19 @@ export const AlbumIcon = ({ width = '2.4rem', height = '2.4rem', className }: Ic
     </svg>
 );
 
+export const PlaylistsIcon = ({ width = '2.4rem', height = '2.4rem', className }: IconsType) => (
+    <svg
+        className={className}
+        xmlns="http://www.w3.org/2000/svg"
+        width={width}
+        height={height}
+        fill="currentColor"
+        viewBox="0 0 24 24"
+    >
+        <path d="M4 6h2v2H4zm0 5h2v2H4zm0 5h2v2H4zm16-8V6H8.023v2H18.8zM8 11h12v2H8zm0 5h12v2H8z"></path>
+    </svg>
+);
+
 export const SettingIcon = ({ width = '2.4rem', height = '2.4rem', className }: IconsType) => (
     <svg
         className={className}
@@ -117,6 +146,33 @@ export const LogoutIcon = ({ width = '2.4rem', height = '2.4rem', className }: I
     </svg>
 );
 
+export const RandomIcon = ({ width = '2.4rem', height = '2.4rem', className }: IconsType) => (
+    <svg
+        className={className}
+        xmlns="http://www.w3.org/2000/svg"
+        width={width}
+        height={height}
+        fill="currentColor"
+        viewBox="0 0 24 24"
+    >
+        <path d="M17 17h-1.559l-9.7-10.673A1 1 0 0 0 5.001 6H2v2h2.559l4.09 4.5-4.09 4.501H2v2h3.001a1 1 0 0 0 .74-.327L10 13.987l4.259 4.686a1 1 0 0 0 .74.327H17v3l5-4-5-4v3z"></path>
+        <path d="M15.441 8H17v3l5-3.938L17 3v3h-2.001a1 1 0 0 0-.74.327l-3.368 3.707 1.48 1.346L15.441 8z"></path>
+    </svg>
+);
+
+export const VolumeMuteIcon = ({ width = '2.4rem', height = '2.4rem', className }: IconsType) => (
+    <svg
+        className={className}
+        xmlns="http://www.w3.org/2000/svg"
+        width={width}
+        height={height}
+        fill="currentColor"
+        viewBox="0 0 24 24"
+    >
+        <path d="m21.707 20.293-2.023-2.023A9.566 9.566 0 0 0 21.999 12c0-4.091-2.472-7.453-5.999-9v2c2.387 1.386 3.999 4.047 3.999 7a8.113 8.113 0 0 1-1.672 4.913l-1.285-1.285C17.644 14.536 18 13.19 18 12c0-1.771-.775-3.9-2-5v7.586l-2-2V4a1 1 0 0 0-1.554-.832L7.727 6.313l-4.02-4.02-1.414 1.414 18 18 1.414-1.414zM12 5.868v4.718L9.169 7.755 12 5.868zM4 17h2.697l5.748 3.832a1.004 1.004 0 0 0 1.027.05A1 1 0 0 0 14 20v-1.879l-2-2v2.011l-4.445-2.964c-.025-.017-.056-.02-.082-.033a.986.986 0 0 0-.382-.116C7.059 15.016 7.032 15 7 15H4V9h.879L3.102 7.223A1.995 1.995 0 0 0 2 9v6c0 1.103.897 2 2 2z"></path>
+    </svg>
+);
+
 export const AlarmIcon = ({ width = '2.4rem', height = '2.4rem', className }: IconsType) => (
     <svg
         className={className}
@@ -128,6 +184,27 @@ export const AlarmIcon = ({ width = '2.4rem', height = '2.4rem', className }: Ic
     >
         <path d="M12 4c-4.879 0-9 4.121-9 9s4.121 9 9 9 9-4.121 9-9-4.121-9-9-9zm0 16c-3.794 0-7-3.206-7-7s3.206-7 7-7 7 3.206 7 7-3.206 7-7 7z"></path>
         <path d="M13 12V8h-2v6h6v-2zm4.284-8.293 1.412-1.416 3.01 3-1.413 1.417zm-10.586 0-2.99 2.999L2.29 5.294l2.99-3z"></path>
+    </svg>
+);
+
+export const TracksIcon = ({ width = '2.4rem', height = '2.4rem', className }: IconsType) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={width}
+        height={height}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+        role="img"
+        focusable="false"
+        className={className}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+    >
+        <circle cx="12" cy="12" r="10"></circle>
+        <circle cx="12" cy="12" r="3"></circle>
     </svg>
 );
 

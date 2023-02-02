@@ -3,6 +3,7 @@
 
 :root {
     // Color
+    --primary-color: #09c478;
     --white-color: #fff;
     --black-color: #000;
     --text-primary: #32323d;
@@ -11,18 +12,22 @@
     --text-color-2: #8a8f96;
     --text-color-3: hsla(0, 0%, 100%, 0.5);
     --orange-color: #ee732f;
-    --search-text: #282828;
+    --search-text: #32323d;
     --background-border: #dedede;
     --border-color: #e6effb;
     --border-color-2: #ccc;
+    --border-secondary: rgba(0, 0, 0, 0.05);
     --player-text: #32323d;
     --link-text-hover: #9c32ca;
     --linear-gradient-bg: linear-gradient(180deg, #740091, #2d1a4c);
     --alpha-bg: rgba(0, 0, 0, 0.05);
-    --sidebar-bg: rgba(0, 0, 0, 0.05);
-    --layout-bg: #fff;
     --text-placeholder: #757575;
     --sticky-header-box-shadow: rgba(0, 0, 0, 0.08);
+    --song-item-action: rgba(50, 50, 61, 0.5);
+
+    // Layout color
+    --layout-bg: #fff;
+    --sidebar-bg: #f5f5f6;
 
     // Box shadow color
     --sticky-header-box-shadow: rgba(0, 0, 0, 0.08);
@@ -31,8 +36,11 @@
     --box-shadow-header: 0 3px 5px var(--sticky-header-box-shadow);
 
     // Width height
+    --sidebar-width: 240px;
     --playing-song-height: 88px;
     --header-search-info-height: 68px;
+    --border-radius-search: 12px;
+    --border-radius-primary: 4px;
 
     // Font family
     --font-family: 'Poppins', sans-serif;
@@ -66,8 +74,29 @@ input[type='range'] {
 }
 
 ::selection {
-    background-color: var(--orange-color);
+    background-color: var(--primary-color);
     color: #fff;
+}
+
+.logo-loading-spin {
+    animation-duration: 0.75s;
+    transform-origin: center center;
+    animation-iteration-count: 1;
+    animation-name: logoLoading;
+}
+
+#my-chart {
+    max-height: 300px !important;
+}
+
+@keyframes logoLoading {
+    0% {
+        transform: translateZ(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateZ(0) rotate(359deg);
+    }
 }
 
 /* Scrollbar CSS */
@@ -77,7 +106,7 @@ input[type='range'] {
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
+    border-radius: var(--border-radius-primary);
     background-color: rgba(0, 0, 0, 0.15);
 }
 

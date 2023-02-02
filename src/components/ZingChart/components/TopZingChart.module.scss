@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 15px;
-    border-radius: 4px;
+    border-radius: var(--border-radius-primary);
     background-color: hsla(0, 0%, 100%, 0.07);
     transition: 0.2s;
     margin-bottom: 12px;
@@ -62,7 +62,7 @@
                 height: 100%;
                 display: block;
                 object-fit: cover;
-                border-radius: 4px;
+                border-radius: var(--border-radius-primary);
             }
 
             .overlay {
@@ -75,7 +75,7 @@
                 display: none;
                 align-items: center;
                 justify-content: center;
-                border-radius: 4px;
+                border-radius: var(--border-radius-primary);
                 z-index: 9;
 
                 .icon {

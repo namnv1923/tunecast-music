@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import styles from './PlayItemContinue.module.scss';
 import { ArtistItemType } from '~/components/ZingChart/components/TopZingChart';
 import { useAppDispatch, useAppSelector } from '~/app/hooks';
-import { setIsPlaying } from '~/redux/slices/settingsSlice';
+import { setIsPlaying } from '~/redux/slices/settingsSongSlice';
 import { setCurrentSongPlay, pushRecentSongPlayList } from '~/redux/slices/songPlaySlice';
 import formatReleaseDate from '~/utils/formatReleaseDate';
 

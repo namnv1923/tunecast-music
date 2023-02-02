@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './TopZingChart.module.scss';
 import TopZingChartItem from './TopZingChartItem';
 import { SongQueueItemType } from '~/components/PlayerQueue';
+import routes from '~/config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -36,7 +37,9 @@ function TopZingChart({ topZingCharts }: TopZingChartsType) {
             <TopZingChartItem index={2} data={ChartTop2} allScore={allScore} />
             <TopZingChartItem index={3} data={ChartTop3} allScore={allScore} />
             <div className={cx('button')}>
-                <Link to="/">Xem thêm</Link>
+                <Link to={`${routes.zingchart}`} state={{ data: topZingCharts }}>
+                    Xem thêm
+                </Link>
             </div>
         </div>
     );

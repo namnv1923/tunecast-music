@@ -1,12 +1,13 @@
 import React, { FC } from 'react';
+import routes from '~/config/routes';
 
 // Layouts
 import NoSongPlaying from '~/layouts/NoSongPlaying';
 import NoLayout from '~/layouts/NoLayout';
 
-import routes from '~/config/routes';
 import Home from '~/pages/Home';
 import Login from '~/pages/Login';
+import ZingChart from '~/pages/ZingChart';
 import Recently from '~/pages/Recently';
 import NotExist from '~/pages/NotExist';
 
@@ -22,19 +23,11 @@ export const publicRoutes: Array<publicRoutesType> = [
         component: Home,
     },
     {
-        path: routes.recently,
-        component: Recently,
+        path: routes.zingchart,
+        component: ZingChart,
     },
     {
         path: routes.favourites,
-        component: NotExist,
-    },
-    {
-        path: routes.create,
-        component: NotExist,
-    },
-    {
-        path: routes.album,
         component: NotExist,
     },
     {

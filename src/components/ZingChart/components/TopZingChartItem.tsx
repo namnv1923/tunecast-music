@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import styles from './TopZingChart.module.scss';
 import { TopChartType } from './TopZingChart';
 import { useAppDispatch, useAppSelector } from '~/app/hooks';
-import { setIsPlaying } from '~/redux/slices/settingsSlice';
+import { setIsPlaying } from '~/redux/slices/settingsSongSlice';
 import { setCurrentSongPlay, pushRecentSongPlayList } from '~/redux/slices/songPlaySlice';
 
 const cx = classNames.bind(styles);

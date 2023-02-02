@@ -1,11 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { Switch } from 'antd';
 import classNames from 'classnames/bind';
 import styles from './Sidebar.module.scss';
-import images from '~/assets/images';
 import Menu from './Menu';
 import MenuItem from './Menu/MenuItem';
 import routes from '~/config/routes';
-import { HomeIcon, RecentlyIcon, HeartIcon, PlusIcon, AlbumIcon, SettingIcon, LogoutIcon } from '~/components/Icons';
+import { LogoIcon, HeartIcon, PlaylistsIcon, TracksIcon, LogoutIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -14,25 +14,27 @@ function Sidebar() {
 
     return (
         <div className={cx('sidebar')}>
-            <Link to="/" className={cx('logo')}>
-                <img src={images.logo} alt="" />
+            <Link to={routes.home} className={cx('logo')}>
+                <LogoIcon className={cx('icon')} width="3.2rem" height="3.2rem" />
+                <span className={cx('title')}>Tunecast</span>
             </Link>
-            <Menu label="Menu">
+            <Menu>
                 <div className={cx('menu')}>
-                    <MenuItem to={routes.home} title="Home" icon={<HomeIcon />} />
-                    <MenuItem to={routes.recently} title="Recently" icon={<RecentlyIcon />} />
-                    <MenuItem to={routes.favourites} title="Favourites" icon={<HeartIcon />} />
+                    <MenuItem to={routes.home} title="Discover" />
+                    <MenuItem to={routes.browse} title="Browse" />
+                    <MenuItem to={routes.zingchart} title="Zingchart" />
                 </div>
             </Menu>
-            <Menu label="Playlist">
+            <Menu label="My Collection">
                 <div className={cx('menu')}>
-                    <MenuItem to={routes.create} title="Create New" icon={<PlusIcon />} />
-                    <MenuItem to={routes.album} title="Pop Punk" icon={<AlbumIcon />} />
+                    <MenuItem to={routes.favourites} title="Likes" icon={<HeartIcon />} />
+                    <MenuItem to={routes.tracks} title="Tracks" icon={<TracksIcon width="2.2rem" height="2.2rem" />} />
+                    <MenuItem to={routes.playlists} title="Playlists" icon={<PlaylistsIcon />} />
                 </div>
             </Menu>
             <Menu label="General">
                 <div className={cx('menu')}>
-                    <MenuItem to={routes.settings} title="Settings" icon={<SettingIcon />} />
+                    <MenuItem to={routes.settings} title="Dark mode" icon={<Switch size="small" />} isLink={false} />
                     <MenuItem to={routes.logout} title="Log Out" icon={<LogoutIcon />} />
                 </div>
             </Menu>

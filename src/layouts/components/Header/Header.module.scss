@@ -1,37 +1,23 @@
 .wrapper {
     position: fixed;
-    left: 248px;
-    right: 330px;
+    left: var(--sidebar-width);
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 40px;
-    // box-shadow: var(--box-shadow-header);
+    padding: 0 50px;
+    border-bottom: 1px solid var(--border-color);
+    height: var(--header-search-info-height);
     background-color: var(--layout-bg);
-    backdrop-filter: blur(50px);
-    box-shadow: 0 3px 5px var(--sticky-header-box-shadow);
-    z-index: 9;
-
-    .control {
-        display: flex;
-        align-items: center;
-
-        .back,
-        .next {
-            padding-right: 12px;
-            margin-right: 12px;
-            cursor: pointer;
-        }
-    }
+    z-index: 100;
 
     .search {
         position: relative;
-        flex: 1;
         display: flex;
-        height: 38px;
+        width: 480px;
+        height: 34px;
         background-color: var(--alpha-bg);
-        border-radius: 50px;
-        margin: 0 50px 0 10px;
+        border-radius: var(--border-radius-search);
         padding-right: 16px;
 
         .search-btn {
@@ -43,8 +29,8 @@
             justify-content: center;
             height: 100%;
             width: 52px;
-            border-top-left-radius: 50px;
-            border-bottom-left-radius: 50px;
+            border-top-left-radius: var(--border-radius-search);
+            border-bottom-left-radius: var(--border-radius-search);
             cursor: pointer;
 
             svg {
@@ -89,7 +75,7 @@
             bottom: -1px;
             left: -1px;
             border: 1.5px solid rgba(22, 24, 35, 0.2);
-            border-radius: 50px;
+            border-radius: var(--border-radius-search);
         }
     }
 
@@ -123,6 +109,20 @@
             object-fit: cover;
             border-radius: 100%;
             margin-right: 12px;
+        }
+    }
+
+    .authentication {
+        .register {
+            color: var(--white-color);
+            background-color: var(--primary-color);
+            margin-left: 10px;
+            outline: none;
+            border: none;
+        }
+
+        .login {
+            color: var(--text-primary);
         }
     }
 }

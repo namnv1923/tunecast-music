@@ -1,4 +1,5 @@
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink, NavLinkProps } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
 
@@ -6,23 +7,32 @@ const cx = classNames.bind(styles);
 
 type MenuItemType = {
     to: string;
-    title: string;
-    icon: JSX.Element;
+    title?: string;
+    icon?: JSX.Element;
+    isLink?: boolean;
 };
 
-function MenuItem({ to, title, icon }: MenuItemType) {
+function MenuItem({ to, title, icon, isLink = true }: MenuItemType) {
+    let Comp: React.ForwardRefExoticComponent<NavLinkProps & React.RefAttributes<HTMLAnchorElement>> | string = NavLink;
+    if (!isLink) {
+        Comp = 'div';
+    }
+
     return (
-        <NavLink
+        <Comp
             to={to}
-            className={(nav) =>
-                cx('menu-item', {
-                    active: nav.isActive,
-                })
+            className={
+                isLink
+                    ? (nav) =>
+                          cx('menu-item', {
+                              active: nav.isActive,
+                          })
+                    : cx('menu-item')
             }
         >
-            {icon}
+            <span className={cx({ icon: icon })}>{icon}</span>
             <span>{title}</span>
-        </NavLink>
+        </Comp>
     );
 }
 

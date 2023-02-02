@@ -5,7 +5,7 @@ import styles from './SongList.module.scss';
 import images from '~/assets/images';
 import { SongQueueItemType } from '~/components/PlayerQueue';
 import formatTime from '~/utils/formatTime';
-import { setIsPlaying } from '~/redux/slices/settingsSlice';
+import { setIsPlaying } from '~/redux/slices/settingsSongSlice';
 import { setCurrentSongPlay, pushRecentSongPlayList } from '~/redux/slices/songPlaySlice';
 import { useAppDispatch, useAppSelector } from '~/app/hooks';
 

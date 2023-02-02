@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import styles from './NowPlaying.module.scss';
 import images from '~/assets/images';
 import { useAppSelector, useAppDispatch } from '~/app/hooks';
-import { setIsPlaying } from '~/redux/slices/settingsSlice';
+import { setIsPlaying } from '~/redux/slices/settingsSongSlice';
 import formatTime from '~/utils/formatTime';
 
 const cx = classNames.bind(styles);

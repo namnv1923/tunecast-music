@@ -1,14 +1,24 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    padding: 24px 16px;
 
     .logo {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: 30px;
+        padding: 0 8px;
 
-        img {
-            display: block;
-            padding-left: 12px;
+        .icon {
+            color: var(--primary-color);
+        }
+
+        .title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-left: 8px;
         }
     }
 }

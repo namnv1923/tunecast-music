@@ -10,6 +10,9 @@ export type SongPlaySliceState = {
 const initialState: SongPlaySliceState = {
     currentTime: 0,
     currentSongPlay: {
+        album: {
+            title: '',
+        },
         alias: '',
         artists: [],
         artistsNames: '',
@@ -23,6 +26,7 @@ const initialState: SongPlaySliceState = {
         thumbnailM: '',
         title: '',
         zingChoice: false,
+        rakingStatus: 0,
     },
     recentSongPlayList: [],
 };

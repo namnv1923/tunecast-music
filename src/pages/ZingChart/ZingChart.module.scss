@@ -1,0 +1,63 @@
+.wrapper {
+    margin-bottom: calc(var(--playing-song-height) + 30px);
+}
+
+.container {
+    position: relative;
+    border-radius: 6px;
+    min-height: 300px;
+    padding: 20px 20px 0;
+
+    .bg-blur,
+    .bg-alpha,
+    .bg-alpha-1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 6px;
+        z-index: 0;
+    }
+
+    .bg-blur {
+        background: url('https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.20/static/media/bg-chart.fd766403.jpg') top /
+            cover no-repeat;
+        filter: grayscale(1);
+    }
+
+    .bg-alpha {
+        background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 37%, var(--layout-bg));
+    }
+
+    .bg-alpha-1 {
+        opacity: 0.9;
+        background-image: linear-gradient(180deg, var(--layout-bg), var(--layout-bg));
+    }
+
+    .heading {
+        display: flex;
+        align-items: center;
+        position: relative;
+        color: var(--primary-color);
+
+        .title {
+            font-size: 2.6rem;
+        }
+
+        .icon {
+            font-size: 2.8rem;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .chart {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.playlist {
+    margin-top: 26px;
+}
