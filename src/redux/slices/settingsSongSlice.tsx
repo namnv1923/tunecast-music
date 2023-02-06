@@ -5,6 +5,7 @@ export type SettingsState = {
     isPlaying: boolean;
     isActive: boolean;
     isMute: boolean;
+    loading: boolean;
 };
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
     isPlaying: false,
     isActive: false,
     isMute: false,
+    loading: false,
 } as SettingsState;
 
 const settingsSongSlice = createSlice({
@@ -30,8 +32,11 @@ const settingsSongSlice = createSlice({
         setIsMute: (state, action) => {
             state.isMute = action.payload;
         },
+        setLoading: (state, action) => {
+            state.loading = action.payload;
+        },
     },
 });
 
-export const { setVolumeValue, setIsPlaying, setIsActive, setIsMute } = settingsSongSlice.actions;
+export const { setVolumeValue, setIsPlaying, setIsActive, setIsMute, setLoading } = settingsSongSlice.actions;
 export default settingsSongSlice.reducer;

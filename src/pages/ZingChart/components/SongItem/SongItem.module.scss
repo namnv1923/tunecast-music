@@ -7,6 +7,18 @@
     border-bottom: 1px solid var(--border-secondary);
     user-select: none;
 
+    &.is-VIP .left .song-info {
+        .song-name {
+            opacity: 0.5;
+            .tag {
+                display: inline-block;
+            }
+        }
+        .singer {
+            opacity: 0.5;
+        }
+    }
+
     &:first-child .left .song-prefix .rank {
         -webkit-text-stroke: 1px #4a90e2;
         opacity: 1;
@@ -58,7 +70,7 @@
 
             .rank {
                 color: rgba(74, 144, 226, 0);
-                font-size: 3.2rem;
+                font-size: 2.4rem;
                 font-weight: 900;
                 line-height: 1;
                 text-align: center;
@@ -77,7 +89,7 @@
                 align-items: center;
 
                 .icon {
-                    font-size: 1.6rem;
+                    font-size: 1.4rem;
                     color: var(--text-secondary);
                 }
 
@@ -92,15 +104,51 @@
         }
 
         .song-thumb {
+            position: relative;
             margin-right: 10px;
+
+            &.active .overlay {
+                visibility: visible;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                z-index: 1;
+                background-color: var(--dark-alpha-50);
+                visibility: hidden;
+
+                .icon-playing {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 18px;
+                    height: 18px;
+                    background-image: url('https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/icons/icon-playing.gif');
+                    background-size: 18px;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                }
+            }
         }
 
         .song-info {
             line-height: 1.4;
 
             .song-name {
+                display: flex;
+                align-items: center;
                 font-size: 1.4rem;
                 font-weight: 600;
+
+                .tag {
+                    display: none;
+                    margin-left: 8px;
+                }
             }
 
             .singer {
@@ -180,6 +228,74 @@
 
         .like {
             visibility: hidden;
+        }
+    }
+}
+
+.wrapper.small {
+    border-bottom: none;
+
+    &:first-child .left .song-prefix .rank,
+    &:nth-child(2) .left .song-prefix .rank,
+    &:nth-child(3) .left .song-prefix .rank {
+        -webkit-text-stroke: 1px var(--text-primary);
+        opacity: 1;
+    }
+
+    .left {
+        flex: 1;
+
+        .song-prefix {
+            .rank {
+                width: 32px;
+            }
+        }
+
+        .song-info {
+            .song-name {
+                font-weight: 500;
+
+                .name {
+                    display: -webkit-box;
+                    text-overflow: ellipsis;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                }
+            }
+
+            .singer {
+                display: -webkit-box;
+                text-overflow: ellipsis;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .center {
+        display: none;
+    }
+
+    .right {
+        margin-left: 10px;
+
+        .like,
+        .more,
+        .toggle {
+            .icon {
+                padding: 6px;
+            }
+        }
+
+        .like {
+            display: none;
+        }
+
+        .time {
+            width: 38px;
+            font-size: 1.2rem;
         }
     }
 }

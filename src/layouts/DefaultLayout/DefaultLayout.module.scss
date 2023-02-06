@@ -32,11 +32,6 @@
         margin-left: var(--sidebar-width);
         padding: 0 50px;
         overflow-y: overlay;
-
-        & .body {
-            margin-top: var(--header-search-info-height);
-            padding-top: 20px;
-        }
     }
 
     & .queue {

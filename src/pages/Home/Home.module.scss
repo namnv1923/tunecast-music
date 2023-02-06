@@ -1,6 +1,7 @@
 .wrapper {
     width: 100%;
     max-width: 100%;
+    margin-top: calc(var(--header-search-info-height) + 18px);
     margin-bottom: var(--playing-song-height);
     overflow-x: hidden;
 

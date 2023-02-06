@@ -8,7 +8,7 @@ import NoLayout from '~/layouts/NoLayout';
 import Home from '~/pages/Home';
 import Login from '~/pages/Login';
 import ZingChart from '~/pages/ZingChart';
-import Recently from '~/pages/Recently';
+import Radio from '~/pages/Radio';
 import NotExist from '~/pages/NotExist';
 
 type publicRoutesType = {
@@ -27,8 +27,8 @@ export const publicRoutes: Array<publicRoutesType> = [
         component: ZingChart,
     },
     {
-        path: routes.favourites,
-        component: NotExist,
+        path: routes.radio,
+        component: Radio,
     },
     {
         path: routes.settings,

@@ -6,9 +6,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
-    border-bottom: 1px solid var(--border-color);
     height: var(--header-search-info-height);
-    background-color: var(--layout-bg);
+    background-color: transparent;
     z-index: 100;
 
     .search {
@@ -114,15 +113,24 @@
 
     .authentication {
         .register {
+            font-size: 1.4rem;
+            font-weight: 500;
             color: var(--white-color);
             background-color: var(--primary-color);
             margin-left: 10px;
             outline: none;
             border: none;
+
+            &:hover {
+                color: var(--white-color);
+            }
         }
 
         .login {
+            font-size: 1.4rem;
+            font-weight: 500;
             color: var(--text-primary);
+            border: 1px solid var(--text-primary);
         }
     }
 }

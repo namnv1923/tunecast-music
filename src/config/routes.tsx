@@ -1,6 +1,6 @@
 const routes = {
     home: '/',
-    browse: '/browse',
+    radio: '/radio',
     zingchart: '/zing-chart',
     favourites: '/favourites',
     tracks: '/tracks',

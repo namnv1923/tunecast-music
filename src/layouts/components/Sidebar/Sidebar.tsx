@@ -5,7 +5,15 @@ import styles from './Sidebar.module.scss';
 import Menu from './Menu';
 import MenuItem from './Menu/MenuItem';
 import routes from '~/config/routes';
-import { LogoIcon, HeartIcon, PlaylistsIcon, TracksIcon, LogoutIcon } from '~/components/Icons';
+import {
+    LogoIcon,
+    HeartIcon,
+    PlaylistsIcon,
+    TracksIcon,
+    LogoutIcon,
+    ZingchartIcon,
+    RadioIcon,
+} from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -20,9 +28,13 @@ function Sidebar() {
             </Link>
             <Menu>
                 <div className={cx('menu')}>
-                    <MenuItem to={routes.home} title="Discover" />
-                    <MenuItem to={routes.browse} title="Browse" />
-                    <MenuItem to={routes.zingchart} title="Zingchart" />
+                    <MenuItem to={routes.home} title="Discover" icon={<TracksIcon width="2.2rem" height="2.2rem" />} />
+                    <MenuItem
+                        to={routes.zingchart}
+                        title="Zingchart"
+                        icon={<ZingchartIcon width="2.2rem" height="2.2rem" />}
+                    />
+                    <MenuItem to={routes.radio} title="Radio" icon={<RadioIcon width="2.2rem" height="2.2rem" />} />
                 </div>
             </Menu>
             <Menu label="My Collection">

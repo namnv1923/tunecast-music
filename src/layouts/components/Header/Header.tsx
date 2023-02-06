@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'antd';
@@ -9,8 +10,27 @@ import { SearchIcon } from '~/components/Icons';
 const cx = classNames.bind(styles);
 
 function Header() {
+    const headerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const changeCssHeader = () => {
+            if (headerRef.current) {
+                if (window.scrollY === 0) {
+                    headerRef.current.style.borderBottom = 'none';
+                    headerRef.current.style.backgroundColor = 'transparent';
+                } else {
+                    headerRef.current.style.borderBottom = '1px solid var(--border-color)';
+                    headerRef.current.style.backgroundColor = 'var(--layout-bg)';
+                }
+            }
+        };
+        window.addEventListener('scroll', changeCssHeader);
+
+        return () => window.removeEventListener('scroll', changeCssHeader);
+    }, []);
+
     return (
-        <div className={cx('wrapper')}>
+        <div ref={headerRef} className={cx('wrapper')}>
             <div className={cx('search')}>
                 <button className={cx('search-btn')}>
                     <SearchIcon />

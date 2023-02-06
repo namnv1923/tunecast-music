@@ -1,12 +1,17 @@
 .wrapper {
-    margin-bottom: calc(var(--playing-song-height) + 30px);
+    position: relative;
+    padding-top: calc(var(--header-search-info-height) + 20px);
+    margin-bottom: calc(var(--playing-song-height));
 }
 
 .container {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     border-radius: 6px;
     min-height: 300px;
-    padding: 20px 20px 0;
+    padding: 88px 20px 0;
 
     .bg-blur,
     .bg-alpha,
@@ -16,8 +21,8 @@
         right: 0;
         bottom: 0;
         left: 0;
-        border-radius: 6px;
         z-index: 0;
+        margin: 0 -50px;
     }
 
     .bg-blur {
@@ -40,9 +45,10 @@
         align-items: center;
         position: relative;
         color: var(--primary-color);
+        margin-bottom: 40px;
 
         .title {
-            font-size: 2.6rem;
+            font-size: 3rem;
         }
 
         .icon {
@@ -58,6 +64,28 @@
     }
 }
 
-.playlist {
-    margin-top: 26px;
+.playlist-wrap {
+    margin-top: 420px;
+}
+
+.see-more {
+    text-align: center;
+    margin-top: 20px;
+
+    .button-see-more {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.43;
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+        outline: none;
+    }
+}
+
+.scale-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
 }

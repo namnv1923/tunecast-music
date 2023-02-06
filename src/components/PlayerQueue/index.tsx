@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { notification } from 'antd';
 import type { NotificationPlacement } from 'antd/es/notification/interface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -57,8 +56,6 @@ function PlayerQueue({ item }: { item: SongQueueItemType }) {
                     dispatch(setIsPlaying(false));
                 } else {
                     dispatch(setIsPlaying(true));
-                    dispatch(setCurrentSongPlay(item));
-                    dispatch(pushRecentSongPlayList(item));
                 }
             } else {
                 dispatch(setIsPlaying(true));

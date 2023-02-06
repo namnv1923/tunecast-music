@@ -1,0 +1,80 @@
+.wrapper {
+    position: relative;
+    padding: 30px 0;
+    margin-top: 60px;
+    min-height: 500px;
+
+    .bg-blur {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        margin: 0 -50px;
+        background: url(https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.8.27/static/media/week-chart-bg.edf332e5.jpg)
+            top/cover no-repeat;
+        filter: grayscale(1);
+    }
+
+    .bg-alpha {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0 -50px;
+        background-color: var(--chart-bg-img-alpha);
+    }
+
+    .title {
+        position: relative;
+        font-size: 3.2rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+
+    .wrapper-colum {
+        position: relative;
+    }
+}
+
+.colum {
+    border-radius: 16px;
+    background-color: var(--chart-box-bg-alpha);
+    padding: 20px 10px;
+
+    .colum-heading {
+        display: flex;
+        align-items: center;
+        font-size: 2.4rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        line-height: 1.2;
+        padding: 0 0 10px 40px;
+
+        .colum-title {
+            margin-right: 6px;
+            cursor: pointer;
+        }
+
+        .colum-icon {
+            cursor: pointer;
+        }
+    }
+
+    .see-more {
+        text-align: center;
+        margin-top: 12px;
+
+        .button-see-more {
+            font-size: 1.3rem;
+            font-weight: 500;
+            line-height: 1.43;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            outline: none;
+        }
+    }
+}
