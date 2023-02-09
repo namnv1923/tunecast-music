@@ -121,32 +121,32 @@ input[type='range'] {
 
 // Override css antd
 :where(.css-dev-only-do-not-override-1ij74fp).ant-btn-default:not(:disabled):hover {
-    color: unset;
-    border-color: unset;
+    color: unset !important;
+    border-color: unset !important;
 }
 
 :where(.css-dev-only-do-not-override-1ij74fp).ant-slider {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 :where(.css-dev-only-do-not-override-1ij74fp).ant-slider .ant-slider-track,
 :where(.css-dev-only-do-not-override-1ij74fp).ant-slider:hover .ant-slider-track {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color) !important;
 }
 
 :where(.css-dev-only-do-not-override-1ij74fp).ant-slider .ant-slider-handle::after,
 :where(.css-dev-only-do-not-override-1ij74fp).ant-slider:hover .ant-slider-handle::after {
-    box-shadow: 0 0 0 2px var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color) !important;
 }
 
 :where(.css-dev-only-do-not-override-1ij74fp).ant-slider .ant-slider-handle:hover::after,
 :where(.css-dev-only-do-not-override-1ij74fp).ant-slider .ant-slider-handle:active::after,
 :where(.css-dev-only-do-not-override-1ij74fp).ant-slider .ant-slider-handle:focus::after {
-    box-shadow: 0 0 0 4px var(--primary-color);
+    box-shadow: 0 0 0 4px var(--primary-color) !important;
 }
 
 :where(.css-dev-only-do-not-override-1ij74fp).ant-slider:hover .ant-slider-rail,
 :where(.css-dev-only-do-not-override-1ij74fp).ant-slider .ant-slider-rail {
-    background-color: var(--background-border);
+    background-color: var(--background-border) !important;
 }

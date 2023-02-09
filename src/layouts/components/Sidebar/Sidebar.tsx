@@ -28,19 +28,15 @@ function Sidebar() {
             </Link>
             <Menu>
                 <div className={cx('menu')}>
-                    <MenuItem to={routes.home} title="Discover" icon={<TracksIcon width="2.2rem" height="2.2rem" />} />
-                    <MenuItem
-                        to={routes.zingchart}
-                        title="Zingchart"
-                        icon={<ZingchartIcon width="2.2rem" height="2.2rem" />}
-                    />
-                    <MenuItem to={routes.radio} title="Radio" icon={<RadioIcon width="2.2rem" height="2.2rem" />} />
+                    <MenuItem to={routes.home} title="Discover" icon={<TracksIcon />} />
+                    <MenuItem to={routes.zingchart} title="Zingchart" icon={<ZingchartIcon />} />
+                    <MenuItem to={routes.radio} title="Radio" icon={<RadioIcon />} />
                 </div>
             </Menu>
             <Menu label="My Collection">
                 <div className={cx('menu')}>
                     <MenuItem to={routes.favourites} title="Likes" icon={<HeartIcon />} />
-                    <MenuItem to={routes.tracks} title="Tracks" icon={<TracksIcon width="2.2rem" height="2.2rem" />} />
+                    <MenuItem to={routes.tracks} title="Tracks" icon={<TracksIcon />} />
                     <MenuItem to={routes.playlists} title="Playlists" icon={<PlaylistsIcon />} />
                 </div>
             </Menu>

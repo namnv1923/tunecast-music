@@ -1,0 +1,60 @@
+.wrapper {
+    margin: 20px 0;
+
+    .heading {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+
+    & img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        display: block;
+        border-radius: 4px;
+        margin-right: 10px;
+        overflow: hidden;
+    }
+
+    & .body {
+        flex: 1;
+        position: relative;
+        cursor: default;
+
+        & .inner {
+            & .title {
+                font-size: 1.4rem;
+                line-height: 1.3;
+                font-weight: 500;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                white-space: normal;
+            }
+
+            & .timer,
+            & .subtitle {
+                display: block;
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: var(--text-secondary);
+            }
+        }
+
+        & .more {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding-left: 8px;
+            cursor: pointer;
+        }
+    }
+}

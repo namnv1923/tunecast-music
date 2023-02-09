@@ -1,10 +1,10 @@
 .wrapper {
     position: fixed;
-    left: 0;
+    left: var(--sidebar-width);
     bottom: 0;
     right: 0;
     z-index: 10;
-    padding: 6px 24px;
+    padding: 6px 14px;
     height: var(--playing-song-height);
     background-color: var(--white-color);
     display: flex;
@@ -21,7 +21,7 @@
     .left .image {
         width: 68px;
         height: 68px;
-        margin-right: 20px;
+        margin-right: 12px;
         border-radius: 6px;
 
         img {
@@ -34,16 +34,29 @@
     }
 
     .left {
+        .label {
+            margin-right: 10px;
+        }
+
         .label .name {
             font-size: 1.4rem;
             font-weight: 600;
             color: var(--text-color);
             line-height: 1.6rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
         }
 
         .label .singer {
             font-size: 1.2rem;
             color: #a8a8ae;
+            margin-top: 4px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
         }
     }
 
@@ -145,7 +158,7 @@
             justify-content: center;
             font-size: 1.8rem;
             padding: 4px 4px;
-            margin: 0 4px;
+            margin: 0 2px;
             color: #8a8f96;
             cursor: pointer;
         }
