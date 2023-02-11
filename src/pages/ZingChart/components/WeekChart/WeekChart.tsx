@@ -29,13 +29,13 @@ function WeekChart({ weekChartData }: WeekChartProps) {
                 <div className="grid">
                     <div className="row">
                         <div className="col l-4">
-                            <WeekChartCol data={weekChartData.vn.items} kind="Việt Nam" />
+                            <WeekChartCol data={weekChartData?.vn?.items} kind="Việt Nam" />
                         </div>
                         <div className="col l-4">
-                            <WeekChartCol data={weekChartData.us.items} kind="US-UK" />
+                            <WeekChartCol data={weekChartData?.us?.items} kind="US-UK" />
                         </div>
                         <div className="col l-4">
-                            <WeekChartCol data={weekChartData.korea.items} kind="K-Pop" />
+                            <WeekChartCol data={weekChartData?.korea?.items} kind="K-Pop" />
                         </div>
                     </div>
                 </div>

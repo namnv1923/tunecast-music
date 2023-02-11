@@ -8,10 +8,10 @@ export enum RadioPath {
 export const getRadioData = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     return useQuery(['radio'], async () => {
-        const data = await apiInstance.get(RadioPath.DEFAULT);
-        if (data) {
+        try {
+            const data = await apiInstance.get(RadioPath.DEFAULT);
             return data.data.items;
-        } else {
+        } catch (error) {
             throw new Error('Error fetch data');
         }
     });

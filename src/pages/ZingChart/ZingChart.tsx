@@ -66,7 +66,7 @@ function ZingChart() {
                         )}
                     </div>
                     <div className={cx('week-chart')}>
-                        <WeekChart weekChartData={data.weekChart} />
+                        <WeekChart weekChartData={data?.weekChart} />
                     </div>
                 </div>
             ) : (

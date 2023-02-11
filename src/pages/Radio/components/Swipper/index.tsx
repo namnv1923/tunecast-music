@@ -10,7 +10,7 @@ import Program from './Program';
 const cx = classNames.bind(styles);
 
 type SwiperProps = {
-    type?: 'program';
+    type?: string;
     data: any;
 };
 
@@ -20,7 +20,7 @@ function Swipper({ type, data }: SwiperProps) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('header')}>
-                <h3 className={cx('title')}>{data.title}</h3>
+                <h3 className={cx('title')}>{data?.title}</h3>
                 <div className={cx('control')}>
                     <span className={cx('left')} onClick={() => swiperRef.current?.slidePrev()}>
                         <LeftOutlined />
@@ -46,7 +46,7 @@ function Swipper({ type, data }: SwiperProps) {
                         modules={[Navigation, Autoplay]}
                         className="mySwiper"
                     >
-                        {data.items.map((item: any, index: number) => (
+                        {data?.items.map((item: any, index: number) => (
                             <SwiperSlide key={index}>
                                 {type === 'program' ? <Program data={item} /> : <Listen data={item} />}
                             </SwiperSlide>

@@ -10,7 +10,7 @@ type ListenProps = {
 function Listen({ data }: ListenProps) {
     return (
         <div className={cx('item')}>
-            <img className={cx('img')} src={data.thumbnail} alt="" />
+            <img className={cx('img')} src={data?.thumbnail} alt="" />
         </div>
     );
 }

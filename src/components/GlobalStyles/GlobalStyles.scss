@@ -70,6 +70,13 @@ body {
     color: var(--text-primary);
 }
 
+.app {
+    background-color: var(--layout-bg);
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
 input[type='range'] {
     -webkit-appearance: none;
     appearance: none;

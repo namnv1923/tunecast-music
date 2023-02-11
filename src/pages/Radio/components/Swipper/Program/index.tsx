@@ -15,7 +15,7 @@ function Program({ data }: ProgramProps) {
         if (coverRef.current) {
             coverRef.current.style.backgroundImage = `url(${data.thumbnailM || data.thumbnail})`;
         }
-    }, [data.thumbnailM, data.thumbnail]);
+    }, [data?.thumbnailM, data?.thumbnail]);
 
     return (
         <div className={cx('program')}>
@@ -23,12 +23,12 @@ function Program({ data }: ProgramProps) {
                 <div className={cx('opacity')}></div>
             </div>
             <div className={cx('program-thumbnail')}>
-                <img src={data.thumbnailM || data.thumbnail} alt="" />
+                <img src={data?.thumbnailM || data?.thumbnail} alt="" />
             </div>
             <div className={cx('program-content')}>
-                <p className={cx('host')}>{data.artists[0].name}</p>
-                <h3 className={cx('program-title')}>{data.title}</h3>
-                <h3 className={cx('program-subtitle')}>{data.description}</h3>
+                <p className={cx('host')}>{data?.artists[0].name}</p>
+                <h3 className={cx('program-title')}>{data?.title}</h3>
+                <h3 className={cx('program-subtitle')}>{data?.description}</h3>
             </div>
         </div>
     );

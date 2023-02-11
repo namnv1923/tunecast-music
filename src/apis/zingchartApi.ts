@@ -8,7 +8,11 @@ export enum ZingChartPath {
 export const getZingChartList = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     return useQuery(['zingchart-list'], async () => {
-        const data = await apiInstance.get(ZingChartPath.DEFAULT);
-        return data.data;
+        try {
+            const data = await apiInstance.get(ZingChartPath.DEFAULT);
+            return data.data;
+        } catch (error) {
+            throw new Error('Fetch data error!');
+        }
     });
 };
